@@ -1,0 +1,14 @@
+<p>
+	<strong>Comment by:</strong>
+	<%= comment.author %>
+</p>
+<p>
+	<strong>Comment:</strong>
+	<%= comment.body %>
+</p>
+
+<%= link_to 'Delete comment', [comment.article, comment],
+	method: :delete,
+	data: { confirm: 'Are your sure?' },
+	class: 'btn btn-danger fa fa-trash'
+%>

@@ -8,3 +8,5 @@ Sample Ruby on Rails blog and learn basic of Ruby on Rails including:
 	    2.2. Model
 	    2.3. Views with forms and partials
 	3. Adding gems for extra features
+	4. Article CRUD
+	5. Comment CRUD
