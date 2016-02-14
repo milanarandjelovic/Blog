@@ -1,3 +1,38 @@
 <h1>Edit article</h1>
 
-<%= render 'form' %>
+<%= form_for @article do |f| %>
+
+	<% if @article.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@article.errors.count, "error") %> prohibited
+					this article from being saved:
+			</h2>
+			<ul>
+				<% @article.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<div class="form-group">
+		<%= f.label :title %>	
+		<%= f.text_field :title, class: 'form-control' %>
+	</div> <!-- /.form-group -->
+
+	<div class="form-group">
+		<%= f.label :body %>	
+		<%= f.text_area :body, class: 'form-control' %>
+	</div> <!-- /.form-group -->
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="btn-group">	
+				<%= f.submit 'Edit article', class: 'btn btn-success' %>
+				<%= link_to 'Article list', articles_path, class: 'btn btn-primary' %>
+			</div> <!-- /.btn-group -->
+		</div> <!-- /.col-md-6 -->
+	</div> <!-- /.row -->
+
+<% end %>
