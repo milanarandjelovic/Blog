@@ -14,13 +14,15 @@
 		</div>
 	<% end %>
 
-	<p>
+	<div class="form-group">
 		<%= f.label :author %>
-		<%= f.text_field :author %>
-	</p>
-	<p>
+		<%= f.text_field :author, class: 'form-control' %>
+	</div> <!-- /.form-group -->
+	<div class="form-group">
 		<%= f.label :body %>
-		<%= f.text_area :body %>
-	</p>
+		<%= f.text_area :body, class: 'form-control' %>
+	</div> <!-- /.form-group -->
+
 	<%= f.submit 'Add comment', class: 'btn btn-success' %>
+
 <% end %>
